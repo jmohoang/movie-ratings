@@ -33,7 +33,9 @@
 
 		<!-- Scatter -->
 		<div id="scatter" style="display: none;">
-			<div>Scatter Plot</div>
+			<div id="scatter-plot-container">
+				<svg id="scatter-plot" width="720" height="405"></svg>
+			</div>
 			<button id="scatterToAbout" class="btn btn-secondary btn-sm">Back</button>
 			<button id="scatterToBar" class="btn btn-secondary btn-sm">Bar Plot</button>
 			<button id="scatterToLine" class="btn btn-secondary btn-sm">Line Graph</button>
@@ -42,7 +44,9 @@
 
 		<!-- Bar -->
 		<div id="bar" style="display: none;">
-			<div>Bar Graph</div>
+			<div id="bar-graph-container">
+				<svg id="bar-graph" width="720" height="405"></svg>
+			</div>
 			<button id="barToScatter" class="btn btn-secondary btn-sm">Back</button>
 		</div>
 
@@ -63,17 +67,25 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<!-- Scripts -->
+	<!-- D3 -->
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<!-- Scripts -->
+	<script src="app.js"></script>
+	<script src="barData.js"></script>
+	<script src="bar.js"></script>
+	<script src="scatterData.js"></script>
+	<script src="scatter.js"></script>
+	<!-- <script src="lineData.js"></script>
+	<script src="line.js"></script> -->
+
+	<!-- Navigtation -->
 	<script>
 		// About Essay
 		// $(function() {
 		// 	$("#about").load("aboutContent.html");
 		// });
 
-		// Navigtation
-		// d3.event.preventDefault();
 		d3.select("#welcome #welcomeToAbout")
 			.on("click", function() {
 				d3.select("#welcome").style("display", "none");
@@ -124,7 +136,6 @@
 				d3.select("#bar").style("display", "inline-block");
 			});
 
-		// scatterToLine
 		d3.select("#scatter #scatterToLine")
 			.on("click", function() {
 				d3.event.preventDefault();
@@ -132,7 +143,6 @@
 				d3.select("#line").style("display", "inline-block");
 			});
 
-		// scatterToConclusion
 		d3.select("#scatter #scatterToConclusion")
 			.on("click", function() {
 				d3.event.preventDefault();
@@ -140,7 +150,6 @@
 				d3.select("#conclusion").style("display", "inline-block");
 			});
 
-		// barToScatter
 		d3.select("#bar #barToScatter")
 			.on("click", function() {
 				d3.event.preventDefault();
@@ -148,7 +157,6 @@
 				d3.select("#scatter").style("display", "inline-block");
 			});
 
-		// lineToScatter
 		d3.select("#line #lineToScatter")
 			.on("click", function() {
 				d3.event.preventDefault();
@@ -156,7 +164,6 @@
 				d3.select("#scatter").style("display", "inline-block");
 			});
 
-		// conclusionToScatter
 		d3.select("#conclusion #conclusionToScatter")
 			.on("click", function() {
 				d3.event.preventDefault();
