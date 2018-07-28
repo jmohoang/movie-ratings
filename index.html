@@ -13,28 +13,50 @@
 	<div class="container">
 		<!-- Welcome -->
 		<div id="welcome">
-			<button id="toAbout" class="btn btn-info btn-sm">About the Visualization</button>
+			<button id="welcomeToAbout" class="btn btn-info btn-sm">About the Visualization</button>
 		</div>
 
 		<!-- About -->
 		<div id="about" style="display: none;">
+			<div>About</div>
+			<a id="aboutToBackground" href="">project background</a>
 			<h6>More information about the visualization</h6>
-			<button class="btn btn-secondary btn-sm">Back</button>
+			<button id="aboutToWelcome" class="btn btn-secondary btn-sm">Back</button>
+			<button id="aboutToScatter" class="btn btn-secondary btn-sm">Next</button>
 		</div>
 
 		<!-- Background -->
 		<div id="background" style="display: none;">
 			<h6>Background information</h6>
+			<button id="backgroundToAbout" class="btn btn-secondary btn-sm">Back</button>
 		</div>
 
 		<!-- Scatter -->
-		<div id="scatter" style="display: none;"></div>
+		<div id="scatter" style="display: none;">
+			<div>Scatter Plot</div>
+			<button id="scatterToAbout" class="btn btn-secondary btn-sm">Back</button>
+			<button id="scatterToBar" class="btn btn-secondary btn-sm">Bar Plot</button>
+			<button id="scatterToLine" class="btn btn-secondary btn-sm">Line Graph</button>
+			<button id="scatterToConclusion" class="btn btn-secondary btn-sm">Next</button>
+		</div>
 
 		<!-- Bar -->
-		<div id="bar" style="display: none;"></div>
+		<div id="bar" style="display: none;">
+			<div>Bar Graph</div>
+			<button id="barToScatter" class="btn btn-secondary btn-sm">Back</button>
+		</div>
 
 		<!-- Line -->
-		<div id="line" style="display: none;"></div>
+		<div id="line" style="display: none;">
+			<div>Line Graph</div>
+			<button id="lineToScatter" class="btn btn-secondary btn-sm">Back</button>
+		</div>
+
+		<!-- Conclusion -->
+		<div id="conclusion" style="display: none;">
+			<div>Conclusion</div>
+			<button id="conclusionToScatter" class="btn btn-secondary btn-sm">Back</button>
+		</div>
 	</div>
 
 	<!-- Bootstrap -->
@@ -46,14 +68,100 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script>
 		// About Essay
-		$(function() {
-			$("#about").load("aboutContent.html");
-		});
+		// $(function() {
+		// 	$("#about").load("aboutContent.html");
+		// });
+
 		// Navigtation
-		d3.select("#welcome #toAbout")
+		// d3.event.preventDefault();
+		d3.select("#welcome #welcomeToAbout")
 			.on("click", function() {
 				d3.select("#welcome").style("display", "none");
 				d3.select("#about").style("display", "inline-block");
+			});
+
+		d3.select("#about #aboutToBackground")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#about").style("display", "none");
+				d3.select("#background").style("display", "inline-block");
+			});
+
+		d3.select("#about #aboutToWelcome")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#about").style("display", "none");
+				d3.select("#welcome").style("display", "inline-block");
+			});
+
+
+		d3.select("#about #aboutToScatter")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#about").style("display", "none");
+				d3.select("#scatter").style("display", "inline-block");
+			});
+
+
+		d3.select("#background #backgroundToAbout")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#background").style("display", "none");
+				d3.select("#about").style("display", "inline-block");
+			});
+
+		d3.select("#scatter #scatterToAbout")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#scatter").style("display", "none");
+				d3.select("#about").style("display", "inline-block");
+			});
+
+		d3.select("#scatter #scatterToBar")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#scatter").style("display", "none");
+				d3.select("#bar").style("display", "inline-block");
+			});
+
+		// scatterToLine
+		d3.select("#scatter #scatterToLine")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#scatter").style("display", "none");
+				d3.select("#line").style("display", "inline-block");
+			});
+
+		// scatterToConclusion
+		d3.select("#scatter #scatterToConclusion")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#scatter").style("display", "none");
+				d3.select("#conclusion").style("display", "inline-block");
+			});
+
+		// barToScatter
+		d3.select("#bar #barToScatter")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#bar").style("display", "none");
+				d3.select("#scatter").style("display", "inline-block");
+			});
+
+		// lineToScatter
+		d3.select("#line #lineToScatter")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#line").style("display", "none");
+				d3.select("#scatter").style("display", "inline-block");
+			});
+
+		// conclusionToScatter
+		d3.select("#conclusion #conclusionToScatter")
+			.on("click", function() {
+				d3.event.preventDefault();
+				d3.select("#conclusion").style("display", "none");
+				d3.select("#scatter").style("display", "inline-block");
 			});
 	</script>
 </body>
