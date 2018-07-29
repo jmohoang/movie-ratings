@@ -1,0 +1,28 @@
+body {
+	background-color: #F5F5F5;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+.divider {
+	background-color: gray;
+	width: 50px;
+	height: 3px;
+}
+/**/
+.welcome {
+	position: relative;
+}
+.welcome-btn {
+	position: absolute;
+	margin-top: 40%;
+	transform: translateY(-50%);
+}
+
+@media screen and (max-width: 767px) {
+	.border-right {
+		border-color: transparent !important;
+	}
+}
