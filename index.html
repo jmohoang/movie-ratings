@@ -34,21 +34,21 @@
 				<h6>Structure</h6>
 				<p>This visualization follows an Interactive Slideshow narrative hybrid structure. Interactive Slideshows combine the author-led structure and the user-led structure. The author-led structure starts with the welcome page that only has a button to the about page. From the about page, the structure leads to the overview of the data and then the conclusion.</p>
 				<p>To help the user navigate the author-led structure, each of the scenes in the structure has the next and back button. These buttons help the user go forward or backwards in the visualization.</p>
-				<p>The user-led structure offers the user the ability to deviate from the author-led structure if they wish to learn explore further. I use links to help users explore further. In the about page, there is a link to the background page where there is more information about the project. In the overview page, there is a link to the trend page and the to the summary page. These two pages show more graphs that help visually explore and understand the relationship between IMDB Scores and the number of users that vote.</p>
+				<p>The user-led structure offers the user the ability to deviate from the author-led structure if they wish to learn and explore further. I use links to help users explore further. In the about page, there is a link to the background page where there is more information about the project. In the overview page, there is a link to the trend page and the to the summary page. These two pages show more graphs that help visually explore and understand the relationship between IMDB Scores and the number of users that vote.</p>
 				<p>It could also be argued that the use of tooltips in the Scatter plot (in the overview page) and in the Line graph (in the trend page) are part of the user-led structure because they allow the user to explore more information in addition to what the author has chosen to display.</p>
 
 				<h6>Scenes</h6>
-				<p>Throughout the visualization, the pages are on a plain background with text being either black or gray. Other than in the graphs, links and buttons are have color. This follows Tufte’s minimalistic design principles. It also helps the user focus on important items to navigate the visualization.</p>
+				<p>Throughout the visualization, the pages are on a plain background with text being either black or gray. Other than in the graphs, links and buttons are the only items that have color. This follows Tufte’s minimalistic design principles. This also helps the user focus on important items to navigate the visualization.</p>
 				<p>To show the overview of the data, I used a scatter plot. This was the best choice because it both the IMDB Scores and the number of voted users are independent of each other. Also, the scatter plot allows the user to explore each of the movies. The line graph was best to show the common trend between IMDB Score and the number of user votes because it is easiest to understand, though IMDB Score are categorical values. The summary plot is a bar graph that shows a typical number of user votes per IMDB Category. I rounded up the IMDB Scores to the nearest whole number to achieve the IMDB Categories.</p>
 				<p>All the graphs have linear axes that range from 0. The axes are linear because the graphs are interested in distances between the IMDB Scores. Other scales would be very confusing when it comes to comparison between data values.</p>
-				<p>An issue I had with my plots was number of voted users because it ranged from extremely low number to very high ones. To solve this, I divided the number of voted user by 1000 in the scatter plot and line graph. This way, hug numbers could not take up all the space in my graphs.</p>
+				<p>An issue I had with my plots was the number of voted users because it ranged from extremely low numbers to very high ones. To solve this, I divided the number of voted user by 1000 in the scatter plot and line graph. This way, high numbers could not take up all the space in my graphs.</p>
 
 				<h6>Annotations</h6>
-				<p>For all my graphs, I have a heading and labeled axes. These labels help users understand the graphs even without reading through the text about the graphs. For the scatter plot and the line graph, I have tooltips that pop-up when the user focuses on a point. The tooltips look the same in both the graphs and they are cleared when the user moves the mouse away. In the bar plot, I have the average user votes on top of each bar. This helps the user understand better since there is really no visual difference between the IMDB Categories 0 and 10.</p>
+				<p>All the graphs in the visualization have a heading and labeled axes. These annotations help users understand the graphs even without reading through the text about the graphs. For the scatter plot and the line graph, I have tooltips that pop-up when the user focuses on a point. The tooltips look the same in both the graphs and they are cleared when the user moves the mouse away. In the bar plot, I have the average user votes on top of each bar. This helps the user understand better since there is really no visual difference between the IMDB Categories 0 and 10.</p>
 
 				<h6>Parameters and Triggers</h6>
-				<p>The important parameters in the visualization are the buttons and links because they trigger the change in scenes. All the buttons and links have the same blue color to help communicate to the user where they can trigger changes in the visualization. When hovered on, the buttons change color to help communicate their purpose to the user.</p>
-				<p>Though the visuals of the buttons are built in Bootstrap, the functionality is built in D3 js. When buttons are clicked, the triggered event changes the display of the current scene to “none” and then the next desired scene’s display to “block”. This is also the same with the link in the about page and the links to the line graph and bard graph. This implementation was used because it was easiest. Even though all my graphs have the same dimensions, it would be still be much harder to change the nitty-gritty details between scenes. The downside is that I have repeated the code to recreate my graphs in multiple places.</p>
+				<p>The important parameters in the visualization are the buttons and links because they trigger the change in scenes. All the buttons and links have the same blue-green color to help communicate to the user where they can trigger changes in the visualization. When hovered on, the buttons and links change color to help communicate their purpose to the user.</p>
+				<p>Though the styling of the buttons is built in Bootstrap CSS, the functionality is built in D3 js. When buttons are clicked, the triggered event changes the display of the current scene to “none”, and then the next desired scene’s display to “block”. This is also the same with the link in the about page and the links to the line graph and bar graph. This implementation was used because it was easiest. Even though all my graphs have the same dimensions, it would still be much harder to change the nitty-gritty details between scenes. The downside is that I have repeated the code to recreate my graphs in multiple places.</p>
 			</div>
 			<div class="d-flex justify-content-between mt-4">
 				<button id="aboutToWelcome" class="btn btn-outline-info btn-sm">
@@ -97,7 +97,7 @@
 			</div>
 			<div>
 				<p>The scatterlplot above gives an overview of the smovie dataset. For each of the movies, the plot shows its IMDB Score and number of people that have voted for the movie. With the help of tooltips, it is easier to explore which movie is which.</p>
-				<p>Due to the sheer number of movies in the data set, a lot of the points lie on top of each other. This makes exploration of the data a little difficult, however, the concentration of the data in cenrtiain areas shows the relationship between the IMDB Scores and the number fo users that vote. </p>
+				<p>Due to the sheer number of movies in the data set, a lot of the points lie on top of each other. This makes exploration of the data a little difficult, however, the concentration of the data in cenrtiain areas of the graph shows the relationship between the IMDB Scores and the number of users that vote. </p>
 			</div>
 
 			<h5 class="mb-3">Explore Further</h5>
@@ -116,7 +116,7 @@
 							<a  id="scatterToBar" href="" class="text-info">Summary</a>
 						</h6></li>
 					</ul>
-					<p>To summerize the the observations of the relationship between the IMDB Score and the number of voted users, the summary plot shows a typical number of voted user for each IMDB Score.</p>
+					<p>To summerize the the observations of the relationship between the IMDB Score and the number of voted users, the summary plot shows a typical number of voted users for each IMDB Score.</p>
 				</div>
 			</div>
 			<div class="d-flex justify-content-between mt-4">
@@ -139,7 +139,7 @@
 				<svg id="line-graph" width="720" height="405"></svg>
 			</div>
 			<div>
-				<p>To come up with this graph, I summed up all the user votes for movies with similar IMDB Scores. I then plotted the summed number of voted user against the IMDB Scores in the graph above.</p>
+				<p>To come up with this graph, I summed up all the user votes for movies with similar IMDB Scores. I then plotted the summed number of voted users against the IMDB Scores in the graph above.</p>
 			</div>
 			<div class="d-flex justify-content-between mt-4">
 				<button id="lineToScatter" class="btn btn-outline-info btn-sm">
@@ -157,7 +157,7 @@
 				<svg id="bar-graph" width="720" height="405"></svg>
 			</div>
 			<div>
-				<p>For each movie, I rounded up the IMDB Score to the nearest whole number, thus creating IMDB Categories. Fro each IMDB Category, I calculated the average number of voted users and plotted teh results in the graph above.</p>
+				<p>For each movie, I rounded up the IMDB Score to the nearest whole number, thus creating IMDB Categories. For each IMDB Category, I calculated the average number of voted users and then plotted the results in the graph above.</p>
 			</div>
 			<div class="d-flex justify-content-between mt-4">
 				<button id="barToScatter" class="btn btn-outline-info btn-sm">
